@@ -6,11 +6,11 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 15:33:19 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/19 15:49:47 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/05/21 16:57:01 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/19 14:41:27 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/21 16:57:57 by avan-ni          ###   ########.fr       */
+/*   Created: 2018/05/21 17:16:51 by avan-ni           #+#    #+#             */
+/*   Updated: 2018/05/21 17:48:49 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t i;
+	int i;
+	int j;
 
 	i = 0;
-	while (s[i] != '\0')
+	j = 0;
+	while (s1[i])
 		i++;
-	return (i);
+	while (s2[j])
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = s2[j];
+	return (s1);
 }
