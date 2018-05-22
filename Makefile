@@ -6,32 +6,30 @@
 #    By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/19 13:48:02 by avan-ni           #+#    #+#              #
-#    Updated: 2018/05/19 13:49:18 by avan-ni          ###   ########.fr        #
+#    Updated: 2018/05/22 17:00:26 by avan-ni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-
 NAME = libft.a
 
-SRC = ft_strscmp.c
+FLAGS = -W -Wall -Werror -Wextra
 
-INC = includes
+SRCS = *.c
 
-CFLAGS = -c -Wall -Wextra -Werror
+OBJS = *.o
+
+$(NAME):
+	gcc $(FLAGS) -c $(SRCS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) $(SRC) -I$(INC)
-	ar rc $(NAME) ft_strcmp.o
-	ranlib $(NAME)
-
 clean:
-	/bin/rm -f ft_strcmp.o
+	rm -rf $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
