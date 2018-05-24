@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 17:57:41 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/22 18:21:18 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/05/24 12:05:40 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 			i++;
 			j++;
 		}
-		if (dstsize != 0)
-			dst[i] = '\0';
+	//	if (dstsize != 0)
+		dst[i] = '\0';
 	}
-	if (dstsize < strlen(src))
-		return (strlen(src) + dstsize);
-	else
-		return (strlen(src) + length);
+//	if (dstsize < strlen(src))
+//		return (strlen(src) + dstsize);
+//	else
+	return (ft_strlen(src) + length);
 }
