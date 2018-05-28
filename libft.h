@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 14:56:57 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 15:22:55 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/05/28 18:13:14 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 
-void 		ft_putchar(char c);
-void 		ft_putstr(char *str);
+void		ft_putchar(char c);
+void		ft_putstr(char *str);
 
 char 		*ft_strcpy(char *dst, const char *src);
 size_t		ft_strlen(const char *s);
@@ -67,9 +67,16 @@ void		ft_strclr(char *s);
 void		ft_putnbr(int n);
 void		ft_putendl(char const *s);
 
-void 		ft_putchar_fd(char c, int fd);
-void 		ft_putstr_fd(char const *s, int fd);
-void 		ft_putendl_fd(char const *s, int fd);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char const *s, int fd);
+void		ft_putendl_fd(char const *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+
+void		*ft_memset(void *b, int c, size_t len);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t len);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
+void    	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
 
 #endif
