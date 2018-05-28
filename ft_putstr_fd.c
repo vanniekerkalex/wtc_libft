@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 14:42:21 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 15:25:39 by avan-ni          ###   ########.fr       */
+/*   Created: 2018/05/28 15:16:26 by avan-ni           #+#    #+#             */
+/*   Updated: 2018/05/28 15:44:43 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+#include "libft.h"
+
+void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s && s)
+	int index;
+
+	index = 0;
+	while (s[index] != '\0')
 	{
-		(*f)(s);
-		s++;
+		ft_putchar_fd(s[index], fd);
+		index++;
 	}
 }

@@ -6,91 +6,36 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 14:33:30 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 10:07:44 by avan-ni          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/24 14:33:30 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 10:06:22 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/05/28 15:13:30 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int		ft_cnt_parts(const char *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	int		cnt;
-	int		in_substring;
+	char	**str;
+	int		i;
+	int		j;
+	int		k;
 
-	in_substring = 0;
-	cnt = 0;
-	while (*s != '\0')
-	{
-		if (in_substring == 1 && *s == c)
-			in_substring = 0;
-		if (in_substring == 0 && *s != c)
-		{
-			in_substring = 1;
-			cnt++;
-		}
-		s++;
-	}
-	return (cnt);
-}
-
-static int		ft_wlen(const char *s, char c)
-{
-	int		len;
-
-	len = 0;
-	while (*s != c && *s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	char	**t;
-	int		nb_word;
-	int		index;
-
-	index = 0;
-	nb_word = ft_cnt_parts((const char *)s, c);
-	t = (char **)malloc(sizeof(*t) * (ft_cnt_parts((const char *)s, c) + 1));
-	if (t == NULL)
+	i = 0;
+	j = 0;
+	if (!(str = (char **)malloc(sizeof(char *) * (ft_wcount(s, c) + 1))))
 		return (NULL);
-	while (nb_word--)
+	while (i < ft_wcount(s, c))
 	{
-		while (*s == c && *s != '\0')
-			s++;
-		t[index] = ft_strsub((const char *)s, 0, ft_wlen((const char *)s, c));
-		if (t[index] == NULL)
-			return (NULL);
-		s = s + ft_wlen(s, c);
-		index++;
+		k = 0;
+		if (!(str[i] = (char *)malloc(sizeof(char) *
+						(ft_lcount(&s[j], c) + 1))))
+			str[i] = NULL;
+		while (s[j] == c)
+			j++;
+		while (s[j] != c && s[j])
+			str[i][k++] = s[j++];
+		str[i][k] = '\0';
+		i++;
 	}
-	t[index] = NULL;
-	return (t);
-}
-
-int main (void)
-{
-	char **str = ft_strsplit("hello*yopu*silly*thing", '*');
-	while (str && *str)
-		{
-			printf("%s\n",*str);
-			str++;
-		}
-	return(0);3
+	str[i] = 0;
+	return (str);
 }

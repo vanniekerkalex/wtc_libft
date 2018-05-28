@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_wcount.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 14:42:21 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 15:25:39 by avan-ni          ###   ########.fr       */
+/*   Created: 2018/05/28 13:03:33 by avan-ni           #+#    #+#             */
+/*   Updated: 2018/05/28 13:24:25 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+int	ft_wcount(const char *str, char c)
 {
-	while (*s && s)
+	int count;
+	int i;
+
+	i = 0;
+	count = 0;
+	while (str[i])
 	{
-		(*f)(s);
-		s++;
+		while (str[i] == c)
+			i++;
+		if (str[i] != c && str[i] != '\0')
+			count++;
+		while (str[i] != c && str[i] != '\0')
+			i++;
 	}
+	return (count);
 }
