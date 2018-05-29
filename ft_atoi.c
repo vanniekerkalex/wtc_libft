@@ -32,6 +32,8 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit((char)*str))
 	{
+		if (((sum * 10) + (*str - '0')) > 2147483647)
+			return (0);
 		sum = (sum * 10) + (*str - '0');
 		str++;
 	}
