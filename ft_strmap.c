@@ -15,16 +15,13 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char *str;
+	size_t len;
 
-	str = (char *)malloc(sizeof(s) * (ft_strlen(s) + 1));
-	if (!str)
+	len = ft_strlen(s);
+	if(!(str = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	while ((char)*s && f)
-	{
-		*str = f(*s);
-		s++;
-		str++;
-	}
+	while (*s && f)
+		*str++ = (f)(*s++);
 	*str = '\0';
-	return (str - ft_strlen(s));
+	return (str - len);
 }
