@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:38:11 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 15:56:27 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/01 15:32:21 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		ft_recursive_power(int nb, int power)
 
 char	ft_get_num(int n, int count)
 {
-	if (n < 10)
+	if (n < 10 && count == 0)
 		return (n);
 	return (n / (ft_recursive_power(10, count)));
 }
@@ -68,16 +68,15 @@ char	*ft_itoa(int n)
 	{
 		if (n < 0)
 		{
-			*str = '-';
+			*str++ = '-';
 			n *= -1;
 		}
 		else
 		{
-			*str = (char)(ft_get_num(n, count - 1) + '0');
+			*str++ = (char)(ft_get_num(n, count - 1) + '0');
 			n = n % ft_recursive_power(10, count - 1);
 		}
 		count--;
-		str++;
 	}
 	*str = '\0';
 	return (str - len);

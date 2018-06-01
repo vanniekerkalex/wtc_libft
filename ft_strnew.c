@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:35:11 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 15:23:37 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/01 12:53:01 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strnew(size_t size)
 {
 	char	*str;
-	
-	if(!(str = (char *)malloc(sizeof(char) * (size + 1))))	
+
+	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	ft_memset(str, '\0', size + 1);
 	return (str);
