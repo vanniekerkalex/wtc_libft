@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 14:56:57 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/05/28 18:46:56 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/01 17:20:58 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int 		ft_isascii(int c);
 int 		ft_isdigit(int c);
 int			ft_isspace(int c);
 int 		ft_isint(int c);
+int			ft_atoi(const char *str);
 
 int 		ft_islower(int c);
 int 		ft_isupper(int c);
@@ -39,6 +40,7 @@ void		ft_putstr(char *str);
 char 		*ft_strcpy(char *dst, const char *src);
 size_t		ft_strlen(const char *s);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
+int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char		*ft_strdup(const char *s1);
@@ -58,7 +60,10 @@ char		**ft_strsplit(char const *s, char c);
 void		ft_striter(char *s, void (*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+void		ft_memdel(void **ap);
 char		*ft_strnew(size_t size);
+void		ft_strdel(char **as);
+int			ft_strequ(char const *s1, char const *s2);
 int			ft_strnequ(char const *s1, char const *s2, size_t n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strmap(char const *s, char (*f)(char));
