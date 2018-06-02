@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 14:56:57 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/01 17:20:58 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/02 15:59:57 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int			ft_atoi(const char *str);
 int 		ft_islower(int c);
 int 		ft_isupper(int c);
 int			ft_isalpha(int c);
-int			ft_wcount(const char *str, char c);
-int			ft_lcount(char const *str, char c);
+size_t		ft_wcount(const char *str, char c);
+size_t		ft_lcount(char const *str, char c);
 
 int			ft_isalnum(int c);
 int			ft_isprint(int c);
