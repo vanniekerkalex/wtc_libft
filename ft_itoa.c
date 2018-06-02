@@ -6,11 +6,12 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:38:11 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/02 17:22:01 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/02 19:35:27 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int		ft_count_char(int n)
 {
@@ -34,57 +35,37 @@ int		ft_count_char(int n)
 	return (count);
 }
 
-int		ft_recursive_power(int nb, int power)
-{
-	if ((power == 0) && (nb > 0))
-		return (1);
-	else if ((power > 0) && (nb > 0))
-	{
-		nb = nb * ft_recursive_power(nb, power - 1);
-		return (nb);
-	}
-	else
-		return (0);
-}
-
-char	ft_get_num(int n, int count)
-{
-	if (n < 10 && count == 0)
-		return (n);
-	return (n / (ft_recursive_power(10, count)));
-}
-
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		count;
-	int		len;
+	char		*str;
+	long int 	num;
+	size_t		len;
+	size_t		i;
 
-	count = ft_count_char(n);
-	len = count;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (!(str = (char *)malloc(sizeof(char) * (count + 1))))
+	i = 0;
+	num = (long int)n;
+	len = (size_t)(ft_count_char(n)); 
+	if(!(str = ft_strnew(len)))
 		return (NULL);
-	while (count-- > 0)
+	printf("%ld\n", num);
+	while (len)
 	{
-		if (n < 0)
+		if (num < 0 && len == 0)
 		{
-			*str++ = '-';
-			n *= -1;
+			*str = '-';
+			break ;
 		}
-		else
-		{
-			*str++ = (char)(ft_get_num(n, count - 1) + '0');
-			n = n % ft_recursive_power(10, count - 1);
-		}
+		*(str + len-- -1) = (num % 10) + '0';
+		num /= 10;
+		printf("%d  %c\n", (int)len, *(str + len));
 	}
-	*str = '\0';
-	return (str - len);
+	printf("%c\n", *(str));
+	return (str);
 }
 
 int main(void)
 {
-	ft_putstr(ft_itoa(39390033));
+	int i = -39390033;
+	printf("= %s\n", ft_itoa(i));
 	return (0);
 }
