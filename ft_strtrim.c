@@ -6,13 +6,13 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 12:29:06 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/03 14:03:08 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/03 14:39:55 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_nonspace(char const *s)
+static size_t	ft_count_nonspace(char const *s)
 {
 	size_t	i;
 	size_t	len;
@@ -37,7 +37,7 @@ size_t	ft_count_nonspace(char const *s)
 	return (len);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char	*str;
 	size_t	len;
