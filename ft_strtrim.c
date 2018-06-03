@@ -61,9 +61,3 @@ char		*ft_strtrim(char const *s)
 	}
 	return (str);
 }
-
-int main (void)
-{
-	ft_putstr(ft_strtrim("  \n\thello \t   alex  \t\n "));
-	return (0);
-}

@@ -50,6 +50,8 @@ char	*ft_itoa(int n)
 	size_t		i;
 
 	i = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	num = (long int)n;
 	len = (size_t)(ft_count_char(n)); 
 	if(!(str = ft_strnew(len)))
