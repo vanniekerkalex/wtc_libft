@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 12:29:30 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/01 17:12:52 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/03 14:03:37 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,5 @@ char	*ft_strndup(const char *s1, size_t n)
 	if (!(str = ft_strnew(n)))
 		return (NULL);
 	ft_strncpy(str, s1, n);
-	/*while (*s1 && n)
-	{
-		*str++ = *s1++;
-		n--;
-	}*/
-	return (str);// - len);
+	return (str);
 }

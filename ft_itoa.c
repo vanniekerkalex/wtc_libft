@@ -6,17 +6,17 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:38:11 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/02 19:35:27 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/03 14:32:40 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		ft_count_char(int n)
+int			ft_count_char(int n)
 {
-	int		count;
-	int		sign;
+	int			count;
+	int			sign;
 
 	sign = 1;
 	count = 0;
@@ -42,10 +42,10 @@ long int	ft_abs(long int n)
 	return (n);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char		*str;
-	long int 	num;
+	long int	num;
 	size_t		len;
 	size_t		i;
 
@@ -53,8 +53,8 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	num = (long int)n;
-	len = (size_t)(ft_count_char(n)); 
-	if(!(str = ft_strnew(len)))
+	len = (size_t)(ft_count_char(n));
+	if (!(str = ft_strnew(len)))
 		return (NULL);
 	if (num < 0)
 	{
@@ -64,7 +64,7 @@ char	*ft_itoa(int n)
 	}
 	while (len > i)
 	{
-		*(str + len-- -1) = (num % 10) + '0';
+		*(str + len-- - 1) = (num % 10) + '0';
 		num /= 10;
 	}
 	return (str);
