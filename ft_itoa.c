@@ -35,6 +35,13 @@ int		ft_count_char(int n)
 	return (count);
 }
 
+long int	ft_abs(long int n)
+{
+	if (n < 0)
+		return (n * -1);
+	return (n);
+}
+
 char	*ft_itoa(int n)
 {
 	char		*str;
@@ -47,25 +54,16 @@ char	*ft_itoa(int n)
 	len = (size_t)(ft_count_char(n)); 
 	if(!(str = ft_strnew(len)))
 		return (NULL);
-	printf("%ld\n", num);
-	while (len)
+	if (num < 0)
 	{
-		if (num < 0 && len == 0)
-		{
-			*str = '-';
-			break ;
-		}
+		num *= -1;
+		str[0] = '-';
+		i = 1;
+	}
+	while (len > i)
+	{
 		*(str + len-- -1) = (num % 10) + '0';
 		num /= 10;
-		printf("%d  %c\n", (int)len, *(str + len));
 	}
-	printf("%c\n", *(str));
 	return (str);
-}
-
-int main(void)
-{
-	int i = -39390033;
-	printf("= %s\n", ft_itoa(i));
-	return (0);
 }
