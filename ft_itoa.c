@@ -6,14 +6,14 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 11:38:11 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/03 14:39:10 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/05 15:40:43 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	ft_count_char(int n)
+static int	ft_count_char(long int n)
 {
 	int			count;
 	int			sign;
@@ -35,13 +35,6 @@ static int	ft_count_char(int n)
 	return (count);
 }
 
-long int	ft_abs(long int n)
-{
-	if (n < 0)
-		return (n * -1);
-	return (n);
-}
-
 char		*ft_itoa(int n)
 {
 	char		*str;
@@ -50,10 +43,8 @@ char		*ft_itoa(int n)
 	size_t		i;
 
 	i = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	num = (long int)n;
-	len = (size_t)(ft_count_char(n));
+	len = (size_t)(ft_count_char(num));
 	if (!(str = ft_strnew(len)))
 		return (NULL);
 	if (num < 0)
