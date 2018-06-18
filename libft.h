@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 14:56:57 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/06 16:33:37 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/18 13:28:29 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int					ft_isdigit(int c);
 int					ft_isspace(int c);
 int					ft_isint(int c);
 int					ft_atoi(const char *str);
+int					ft_delchr(const char *s, char c);
 
 int					ft_islower(int c);
 int					ft_isupper(int c);
@@ -44,6 +45,8 @@ char				*ft_strncpy(char *dst, const char *src, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnew_del(char *s, char c);
+char				*ft_strnew_delaft(char *s, char c);
+
 
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s1, size_t n);

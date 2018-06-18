@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_delchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 17:10:21 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/01 15:50:33 by avan-ni          ###   ########.fr       */
+/*   Created: 2018/06/05 17:09:08 by avan-ni           #+#    #+#             */
+/*   Updated: 2018/06/07 18:32:43 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_delchr(const char *s, char c)
 {
-	char	*str;
-	size_t	len;
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	len = ft_strlen(s1);
-	if (!(str = ft_strnew(len)))
-		return (NULL);
-	while (*(s1 + i))
+	while (*(s + i))
 	{
-		*(str + i) = *(s1 + i);
+		if (*(s + i) == c)
+			return ((int)i);
 		i++;
 	}
-	return (str);
+	if (*(s + i) == c && c == '\0')
+		return (i);
+	return (-1);
 }

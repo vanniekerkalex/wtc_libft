@@ -6,7 +6,7 @@
 /*   By: avan-ni <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 16:05:21 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/06/06 16:32:58 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/06/07 13:03:59 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnew_del(char *s, char c)
 	if (i == ft_strlen(s))
 		return (s);
 	else if (i == 0)
-		return (NULL);
+		return (ft_strnew(0));
 	else
 		return (ft_strndup((const char *)s, i));
 }
