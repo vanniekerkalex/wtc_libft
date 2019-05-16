@@ -1,3 +1,5 @@
+![](libft.PNG)
+
 # Libft
 
 Code a set of standard library function to be used in future projects.
