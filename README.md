@@ -4,7 +4,7 @@
 
 Code a set of standard library functions to be used in future projects.
 
-For more detail including function descriptions, please view the file *libft - project description.pdf*.
+For more detail including function descriptions, please view the file **libft - project description.pdf**.
 
 ## Objective
 
